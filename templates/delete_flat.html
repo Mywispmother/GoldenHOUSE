@@ -36,24 +36,33 @@ text-align: center;
 position: absolute;
 top: 56%;
 left: 44%;
+padding-top: 10px;
 }
+.buton2{
+padding-top: 10px;
+}
+
+
 
 
 </style>
 <body>
 <div class="body">
-{%if request.user.username == object.user.username or request.user.username == 'admin' %}
-<form action="" method="post">
-    {% csrf_token %}
-    <h2>Вы действительно хотите удалить ? </h2>
-    <div class="buton">
-    <input class="button" type="submit" value="Да">
+    {%if request.user.username == object.user.username or request.user.username == 'admin' %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2>Вы действительно хотите удалить ? </h2>
+        <div class="buton">
+            <input class="button" type="submit" value="Да">
+            <div class="buton2">
+                <input class="button" type="button" onclick="history.back();" value="Нет"/>
 
 
-{%else%}<a href="/flats/">на главную</a>
-{%endif%}
+                {%else%}<a href="/flats/">на главную</a>
+                {%endif%}
+            </div>
         </div>
-</form>
+    </form>
 </div>
 </body>
 </html>

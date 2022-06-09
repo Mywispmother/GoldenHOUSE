@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from .filters import FlatFilter
 
 
+def home(request):
+    return redirect('flats/',request)
 
 
 
